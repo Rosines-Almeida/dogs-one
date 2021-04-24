@@ -5,12 +5,12 @@ import { Button } from '../Form/Button'
 import { useForm } from '../../Hooks/useForm'
 // import { TOKEN_POST, USER_GET } from '../../api'
 import { UserContext } from '../../Hooks/UserContext'
- 
 
 export const LoginForm = () => {
     const username = useForm('nome');
     const password = useForm('');
-    const {userLogin } = React.useContext(UserContext)
+    const {userLogin , error, loading } = React.useContext(UserContext);
+    console.log(error)
     
     // React.useEffect(()=>{
     //     const token = window.localStorage.getItem('token');
@@ -58,8 +58,12 @@ export const LoginForm = () => {
                 name="password"
                 {...password}
             /> 
-       <Button > Entrar   </Button>
-
+            {loading 
+            ? <Button disabled> Carrgando ...   </Button>
+            :  <Button > Entrar   </Button>
+            }
+      
+        {error && <p>{error}</p>}
             </form>
             <Link to="/login/criar"> Cadastro</Link>
           
