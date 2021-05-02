@@ -7,7 +7,7 @@ import { UserContext } from '../Hooks/UserContext'
 
 
 export const Header = () => {
-    const { data, userLogout } = React.useContext(UserContext);
+    const { data } = React.useContext(UserContext);
     console.log('dat', data)
     
     return (
@@ -16,7 +16,6 @@ export const Header = () => {
                <Link  className={styles.logo} to="/"  aria-label="dogs-home"><Dog/></Link>|
                {data
                     ? <Link className={styles.login} to="/conta"> {data.nome}
-                    <button onClick = { userLogout}> Sair </button>
                     </Link>
                     : <Link className={styles.login} to="/login"> Login _Criar</Link>
                 }

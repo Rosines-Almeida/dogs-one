@@ -1,6 +1,6 @@
 import React from 'react';
 import { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST} from '../api'
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export const UserContext = React.createContext();
 
@@ -13,6 +13,8 @@ export const UserStorage = ({ children }) => {
 
     const userLogout = React.useCallback(
         async function () {
+            debugger
+            console.log('logout')
           setData(null);
           setError(null);
           setLoading(false);
@@ -77,6 +79,8 @@ export const UserStorage = ({ children }) => {
                 }finally{
                     setLoading(false)
                 }
+            }else{
+                setLogin(false)
             }
         }
         autoLogin()

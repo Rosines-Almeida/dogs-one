@@ -10,8 +10,11 @@ import { Footer } from './Components/Footer';
 import { Header } from './Components/Header';
 import { Home } from './Components/Home';
 import { Login } from './Components/Login/Login';
+ 
 import './App.css'
 import { UserStorage }  from './Hooks/UserContext'
+import { User } from './Components/User/User';
+import { ProtectdRoute } from './Components/Helper/ProtectdRoute';
 
 const App = () => {
   return <div> 
@@ -31,6 +34,8 @@ const App = () => {
     <Routes>
       <Route  path="/" element={<Home/>} />
       <Route  path="login/*" element={<Login/>} />
+      <ProtectdRoute path="conta/*" element={<User/>}/>
+       
     </Routes>
     <Footer/>
     </UserStorage>
