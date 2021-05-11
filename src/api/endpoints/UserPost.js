@@ -20,29 +20,13 @@ export const UserPost = () => {
               email,
             }),
           })
-            .then((response) => {
-              console.log(response);
+            .then((response) => { 
               return response.json();
             })
-            .then((json) => {
-              console.log(json);
+            .then((json) => { 
               return json;
             });
         }
-/*
-const USER_POST = {
-  endpoint: '/api/user',
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: {
-    username: '',
-    password: '',
-    email: '',
-  },
-};
-*/
 
     return (
         <form onSubmit={handleSubmit}>

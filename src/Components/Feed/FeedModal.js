@@ -7,8 +7,6 @@ import { PhotoContent } from '../Photo/PhotoContent';
 import styles from './FeedModal.module.css'
 
 export const FeedModal = ({photo, setModalPhoto}) => {
-    console.log(photo.id)
-    
    const {data,loading, error, request} = UseFetch();
 
    React.useEffect(()=>{
@@ -18,8 +16,6 @@ export const FeedModal = ({photo, setModalPhoto}) => {
  
   function handleOutSideClick(event) {
       if( event.target ===  event.currentTarget) setModalPhoto(null)
-      console.log(`event.target`, event.target)
-      console.log(`event.target`, event.currentTarget)
   }
   
     return (

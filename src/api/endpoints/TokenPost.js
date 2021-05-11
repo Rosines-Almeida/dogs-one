@@ -20,32 +20,14 @@ export const TokenPost = () => {
          
             }),
           })
-            .then((response) => {
-              console.log(response);
+            .then((response) => { 
               return response.json();
             })
             .then((json) => { 
-              setToken(json.token) 
-            
               return json;
             });
         }
-        console.log(token)
-/*
-const USER_POST = {
-  endpoint: '/api/user',
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: {
-    username: '',
-    password: '',
-    email: '',
-  },
-};
-*/
-
+ 
     return (
         <form onSubmit={handleSubmit}>
             <input 

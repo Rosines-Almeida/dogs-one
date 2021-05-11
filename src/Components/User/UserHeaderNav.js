@@ -17,8 +17,8 @@ export const UserHeaderNav = () => {
 
     React.useEffect(() => {
         setMobileMenu(false)
-    }, [pathname])
-    console.log(`mobile`, mobile)
+    }, [pathname]) 
+    
     return (
         <>
             {mobile &&

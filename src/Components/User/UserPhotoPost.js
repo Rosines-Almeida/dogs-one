@@ -8,6 +8,7 @@ import { PHOTO_POST } from '../../api'
 import styles from './UserPhotoPost.module.css'
 import {Error} from '../Helper/Error'
 import { useNavigate } from 'react-router'
+import { Head } from '../Helper/Head'
 export const UserPhotoPost = () => {
 
 const nome = useForm();
@@ -31,7 +32,7 @@ const navigate = useNavigate();
         const token = window.localStorage.getItem('token');
         const { url, options } = PHOTO_POST(formData, token)
         request(url, options )
-        console.log(formData)
+         
     }
 
     function handleImgChange({ target }) {
@@ -42,8 +43,11 @@ const navigate = useNavigate();
       }
 
     return (
-        <section className={`${style.photoPost} animeLeft`}>
-         <form  onSubmit={handleSubmit}>
+        <section className={`${style.photoPost}`}>
+            <Head
+                title="Poste sua foto"
+            />
+         <form onSubmit={handleSubmit}>
              <Input label="Nome" type="text" name="nome" {...nome} />
              <Input label="Peso" type="text" name="peso"{...peso} />
              <Input label="Idade" type="text" name="idade" {...idade} />
@@ -54,7 +58,15 @@ const navigate = useNavigate();
              id="img"
              onChange={handleImgChange} 
              />
-             <div  > 
+           
+             {loading 
+             ?<Button disabled> Enviando...</Button>
+             : <Button> Enviar</Button>
+             }
+             <Error error={error}></Error>
+             
+         </form>
+         <div> 
                  {img.preview && 
                  <div  
                  className={styles.preview}
@@ -63,13 +75,6 @@ const navigate = useNavigate();
                  }
 
              </div>
-             {loading 
-             ?<Button disabled> Enviando...</Button>
-             : <Button> Enviar</Button>
-             }
-             <Error error={error}></Error>
-             
-         </form>
         </section>
     )
 }

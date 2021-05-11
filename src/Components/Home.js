@@ -1,11 +1,17 @@
-import React from 'react'
-import { Feed } from './Feed/Feed'
+import React from 'react';
+import { useParams } from 'react-router';
+import { Feed } from './Feed/Feed';
+import { Head } from './Helper/Head';
 
 export const Home = () => {
-    return (
-        <section className="container mainContainer">
-            <h1> home</h1>
-          <Feed/>
-        </section>
-    )
-}
+  const { user } = useParams();
+  return (
+    <section className="container mainContainer">
+      <Head
+        title="Fotos"
+        description="home do site Dogs , com o feed de fotos"
+      />
+      <Feed user={user} />
+    </section>
+  );
+};

@@ -8,12 +8,10 @@ export const PhotoGet = () => {
       event.preventDefault();
   
       fetch(`${URL}/api/photo/`)
-      .then((response) => {
-        console.log(response);
+      .then((response) => { 
         return response.json();
       })
-      .then((json) => {
-        console.log(json);
+      .then((json) => { 
         return json;
       });
   }
