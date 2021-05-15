@@ -15,7 +15,6 @@ export const UseFetch = () => {
       json = await response.json();
       if (response.ok === false) throw new Error(`Erro ${json.message}`);
     } catch (err) {
-      debugger;
       json = null;
       setError(err.message);
     } finally {
@@ -24,7 +23,7 @@ export const UseFetch = () => {
       return { response, json };
     }
   },
-  []);
+    []);
   return ({
     data,
     loading,

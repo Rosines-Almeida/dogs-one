@@ -1,14 +1,13 @@
-import React from 'react'
-import { UserHeaderNav } from './UserHeaderNav'
-import styles from './UserHeader.module.css'
+import React from 'react';
 import { useLocation } from 'react-router';
+import { UserHeaderNav } from './UserHeaderNav';
+import styles from './UserHeader.module.css';
 
 export const UserHeader = () => {
-    const [title, setTitle] = React.useState(''); 
-    const location = useLocation(); 
-  
+    const [title, setTitle] = React.useState('');
+    const location = useLocation();
 
-    React.useEffect(( ) => {
+    React.useEffect(() => {
         const { pathname } = location;
         switch (pathname) {
             case '/conta/postar':
@@ -21,13 +20,15 @@ export const UserHeader = () => {
                 setTitle('Minha Conta');
                 break;
         }
+    }, [location]);
 
-    },[location])
-     
     return (
         <header className={styles.header}>
-            <h1 className="title"> { title }</h1>
-            <UserHeaderNav/>
+            <h1 className="title">
+                {' '}
+                {title}
+            </h1>
+            <UserHeaderNav />
         </header>
-    )
-}
+    );
+};
