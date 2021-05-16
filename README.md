@@ -7,7 +7,7 @@ Rede social de dogs, projeto desenvolvido durante o curso React Completo- Origam
 	<li> Veja fotos de outros pets e comente;</li>
 	</ul>
 	
-	<a href="https://dogs-nu.vercel.app"> https://dogs-nu.vercel.app/</a>
+	 [ https://dogs-nu.vercel.app] (https://dogs-nu.vercel.app)
 
 # Getting Started with Create React App
 
