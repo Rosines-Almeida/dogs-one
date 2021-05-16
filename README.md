@@ -1,10 +1,10 @@
 
 Rede social de dogs, projeto desenvolvido durante o curso React Completo- Origamid
 <ul>
-	<li>• Crie sua conta;</li>
-	<li>• Adicione fotos do seu pet;</li>
-	<li>• Acompanhe o numero de visualizações;</li>
-	<li>  • Veja fotos de outros pets e comente;</li>
+	<li> Crie sua conta;</li>
+	<li> Adicione fotos do seu pet;</li>
+	<li> Acompanhe o numero de visualizações;</li>
+	<li> Veja fotos de outros pets e comente;</li>
 	</ul>
 
 # Getting Started with Create React App
