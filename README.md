@@ -1,5 +1,6 @@
 
 Rede social de dogs, projeto desenvolvido durante o curso React Completo- Origamid
+<label> Funcionalidades: </label>
 <ul>
 	<li> Crie sua conta;</li>
 	<li> Adicione fotos do seu pet;</li>
