@@ -9,6 +9,8 @@ Rede social de dogs, projeto desenvolvido durante o curso React Completo- Origam
 	
  https://dogs-nu.vercel.app
 
+<img width="572" alt="dogs_one" src="https://user-images.githubusercontent.com/39601714/120368363-59385f80-c2e8-11eb-9265-02a4621e8e92.PNG">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
