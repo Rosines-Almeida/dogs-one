@@ -3,22 +3,27 @@ import { Link } from 'react-router-dom';
 import { Input } from '../Form/Input';
 import { Button } from '../Form/Button';
 import { useForm } from '../../Hooks/useForm';
-// import { TOKEN_POST, USER_GET } from '../../api'
 import { UserContext } from '../../Hooks/UserContext';
 import { Error } from '../Helper/Error';
 import styles from './LoginForm.module.css';
 import stylesBtn from '../Form/Button.module.css';
 import { Head } from '../Helper/Head';
+import { useSelector, useDispatch } from 'react-redux';
+import { userLogin } from '../../store/user';
 
 export const LoginForm = () => {
     const username = useForm('nome');
     const password = useForm('');
-    const { userLogin, error, loading } = React.useContext(UserContext);
+    const { token, user } = useSelector(state => state)
+    const loading = token.loading || user.loading;
+    const error = token.error || user.error;
+    const dispatch = useDispatch()
+
 
     async function handleSubimit(event) {
         event.preventDefault();
         if (username.validate() && password.validate()) {
-            userLogin(username.value, password.value);
+            dispatch(userLogin({ username: username.value, password: password.value }));
         }
     }
     return (
@@ -48,7 +53,7 @@ export const LoginForm = () => {
             <div className={styles.cadastro}>
                 <h2 className={styles.subtitle}>
                     Cadastre-se
-        </h2>
+                </h2>
                 <p> Ainda não possui conta? Cadastre-se no site.</p>
                 <Link className={stylesBtn.button} to="/login/criar"> Cadastro</Link>
             </div>

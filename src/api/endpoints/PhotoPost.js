@@ -1,55 +1,54 @@
 import React from 'react'
-//import style from './UserPost.module.css'
 
 export const PhotoPost = () => {
-    const [token, setToken] = React.useState('');
-    const [nome, setNome] = React.useState('');
-    const [peso, setPeso] = React.useState('');
-    const [idade, setIdade] = React.useState('');
-    const [img, setImg] = React.useState('');
-    const URL = 'https://dogsapi.origamid.dev/json';
-    
-    function handleSubmit(event){
-        event.preventDefault(event)
-        
-        const formData = new FormData();
-        formData.append('img', img);
-        formData.append('nome', nome);
-        formData.append('peso', peso);
-        formData.append('idade', idade);
-      
+  const [token, setToken] = React.useState('');
+  const [nome, setNome] = React.useState('');
+  const [peso, setPeso] = React.useState('');
+  const [idade, setIdade] = React.useState('');
+  const [img, setImg] = React.useState('');
+  const URL = 'https://dogsapi.origamid.dev/json';
 
-        fetch(`${URL}/api/photo`, {
-            method: 'POST',
-            headers: {
-                Authorization: 'Bearer ' + token,
-            },
-            body:formData 
-          })
-            .then((response) => {
-              return response.json();
-            })
-            .then((json) => { 
-              return json;
-            });
-        }
-/*
-const USER_POST = {
-  endpoint: '/api/user',
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: {
-    username: '',
-    password: '',
-    email: '',
-  },
-};
-*/
+  function handleSubmit(event) {
+    event.preventDefault(event)
 
-    return (
-        <form onSubmit={handleSubmit}>
+    const formData = new FormData();
+    formData.append('img', img);
+    formData.append('nome', nome);
+    formData.append('peso', peso);
+    formData.append('idade', idade);
+
+
+    fetch(`${URL}/api/photo`, {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+      body: formData
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        return json;
+      });
+  }
+  /*
+  const USER_POST = {
+    endpoint: '/api/user',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: {
+      username: '',
+      password: '',
+      email: '',
+    },
+  };
+  */
+
+  return (
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Token"
@@ -75,8 +74,8 @@ const USER_POST = {
         onChange={({ target }) => setIdade(target.value)}
       />
       <input type="file" onChange={({ target }) => setImg(target.files[0])} />
-     
+
       <button>Enviar</button>
     </form>
-    )
+  )
 }

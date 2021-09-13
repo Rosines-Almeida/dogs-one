@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './UserStatisGraphs.module.css'
-import { VictoryPie, VictoryChart, VictoryBar } from 'victory'
 
 const UserStatsGraphs = ({ data }) => {
 
@@ -12,7 +11,6 @@ const UserStatsGraphs = ({ data }) => {
             return {
                 x: item.title,
                 y: 10
-                // y: Number(item.acessos)
             }
         })
         if (data > 0) {
@@ -26,7 +24,7 @@ const UserStatsGraphs = ({ data }) => {
                 <p>Acessos: {total}</p>
             </div>
             <div className={styles.graphItem}>
-                <VictoryPie
+                {/* <VictoryPie
                     data={graph}
                     innerRadius={50}
                     padding={{ top: 20, bottom: 20, left: 80, right: 80 }}
@@ -52,7 +50,7 @@ const UserStatsGraphs = ({ data }) => {
                     >
 
                     </VictoryBar>
-                </VictoryChart>
+                </VictoryChart> */}
             </div>
         </section>
     )
