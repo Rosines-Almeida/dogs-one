@@ -3,7 +3,8 @@
 <p> Rede social de dogs - Projeto desenvolvido durante o curso React Completo- Origamid </p> 
  https://dogs-nu.vercel.app
  <br> <br> 
-<p> Funcionalidades: </p>
+ 
+## Funcionalidades: 
 <ul>
 	<li> Crie sua conta;</li>
 	<li> Adicione fotos do seu pet;</li>
@@ -11,11 +12,11 @@
 	<li> Veja fotos de outros pets e comente;</li>
 	</ul>
 	
-
+## Aparência:
 
 <img width="1000" alt="dogs_one" src="https://user-images.githubusercontent.com/39601714/120368363-59385f80-c2e8-11eb-9265-02a4621e8e92.PNG">
 
-## Recursos utilizados
+## Recursos utilizados:
 
 * **Visual Studio Code**
 * **React**
